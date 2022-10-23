@@ -7,11 +7,12 @@ import br.com.casellisoftware.bibbirthdaymanagerapi.infra.endpoints.SaveBirthday
 import br.com.casellisoftware.bibbirthdaymanagerapi.infra.mappers.BirthdayBoyBusinessResponseDtoMapper;
 import br.com.casellisoftware.bibbirthdaymanagerapi.infra.mappers.BirthdayRequestDtoBusinessMapper;
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/bb/save")
+@RequestMapping("/v1/bb/save")
 @RequiredArgsConstructor
 public class SaveBirthdayBoyEndpointImpl implements SaveBirthdayBoyEndpoint {
 

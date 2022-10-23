@@ -5,13 +5,16 @@ import br.com.casellisoftware.bibbirthdaymanagerapi.infra.dto.BirthdayBoyRespons
 import br.com.casellisoftware.bibbirthdaymanagerapi.business.ports.boundary.BirthdayBoyFindAllBoundary;
 import br.com.casellisoftware.bibbirthdaymanagerapi.infra.mappers.BirthdayBoyBusinessResponseDtoMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+//TODO - Check CORS configuration
+
 @RestController
-@RequestMapping("/bb/list")
+@RequestMapping("/v1/bb/list")
 @RequiredArgsConstructor
 public class FindAllBirthdayBoyEndpointImpl implements FindAllBirthdayBoyEndpoint {
 
