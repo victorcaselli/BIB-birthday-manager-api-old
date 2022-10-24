@@ -2,6 +2,7 @@ package br.com.casellisoftware.bibbirthdaymanagerapi.infra.config;
 
 import br.com.casellisoftware.bibbirthdaymanagerapi.business.ports.datasource.BirthdayBoyDsGateway;
 import br.com.casellisoftware.bibbirthdaymanagerapi.business.usecases.BirthdayBoyDeleteByIdUseCase;
+import br.com.casellisoftware.bibbirthdaymanagerapi.business.usecases.BirthdayBoyFindAllPagedUseCase;
 import br.com.casellisoftware.bibbirthdaymanagerapi.business.usecases.BirthdayBoyFindAllUseCase;
 import br.com.casellisoftware.bibbirthdaymanagerapi.business.usecases.BirthdayBoySaveUseCase;
 import org.springframework.context.annotation.Bean;
@@ -24,5 +25,10 @@ public class UseCaseBeanConfiguration {
     @Bean
     public BirthdayBoyDeleteByIdUseCase birthdayBoyDeleteByIdUseCase(BirthdayBoyDsGateway birthdayBoyDsGateway){
         return new BirthdayBoyDeleteByIdUseCase(birthdayBoyDsGateway);
+    }
+
+    @Bean
+    public BirthdayBoyFindAllPagedUseCase birthdayBoyFindAllPagedUseCase(BirthdayBoyDsGateway birthdayBoyDsGateway){
+        return new BirthdayBoyFindAllPagedUseCase(birthdayBoyDsGateway);
     }
 }
