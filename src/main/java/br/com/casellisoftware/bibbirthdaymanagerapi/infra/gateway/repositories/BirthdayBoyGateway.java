@@ -26,7 +26,6 @@ public class BirthdayBoyGateway implements BirthdayBoyDsGateway {
     private final BirthdayBoyEntityDomainMapper domainMapper = new BirthdayBoyEntityDomainMapper();
     @Override
     public List<BirthdayBoy> findAll() {
-        System.out.println(birthdayBoyRepository.findAll());
         return birthdayBoyRepository.findAll()
                 .stream()
                 .map(businessMapper::map)
@@ -47,9 +46,8 @@ public class BirthdayBoyGateway implements BirthdayBoyDsGateway {
     }
 
     @Override
-    public Page<BirthdayBoy> findAllPaged(PageRequest pageRequest) {
-        System.out.println(birthdayBoyRepository.findAllPaged(pageRequest).get().collect(Collectors.toList()));
-        return birthdayBoyRepository.findAllPaged(pageRequest)
+    public Page<BirthdayBoy> findAllPaged(PageRequest pageRequest, int month) {
+        return birthdayBoyRepository.findAllPaged(pageRequest, month)
                 .map(businessMapper::map);
     }
 }

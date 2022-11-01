@@ -13,7 +13,8 @@ public interface FindAllPagedBirthdayBoyEndpoint {
     Page<BirthdayBoyResponseDto> execute(
             @RequestParam(value = "page", defaultValue = "0") Integer page,
             @RequestParam(value = "linesPerPage", defaultValue = "10") Integer linesPerPage,
-            @RequestParam(value = "orderBy", defaultValue = "birthday") String orderBy,
-            @RequestParam(value = "direction", defaultValue = "DESC") String direction
+            @RequestParam(value = "orderBy", defaultValue = "dayOfMonth") String orderBy,
+            @RequestParam(value = "direction", defaultValue = "ASC") String direction,
+            @RequestParam(value = "month", required = false) Integer month
     );
 }

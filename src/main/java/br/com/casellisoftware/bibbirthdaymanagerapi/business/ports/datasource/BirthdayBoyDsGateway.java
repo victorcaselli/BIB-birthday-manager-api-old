@@ -14,5 +14,5 @@ public interface BirthdayBoyDsGateway {
     BirthdayBoy save(BirthdayBoy birthdayBoy);
     void deleteById(long id);
 
-    Page<BirthdayBoy> findAllPaged(PageRequest pageRequest);
+    Page<BirthdayBoy> findAllPaged(PageRequest pageRequest, int month);
 }

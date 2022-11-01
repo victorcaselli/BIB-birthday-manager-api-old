@@ -13,6 +13,12 @@ public class BirthdayBoyDomainBusinessFactory {
                 .withName(domain.getName())
                 .withId(domain.getId())
                 .withBirthday(domain.getBirthday())
+                .withDayOfMonth(domain.getDayOfMonth())
+                .withMonthOfYear(domain.getMonthOfYear())
+                .withJob(domain.getJob())
+                .withInterestType(domain.getInterestType())
+                .withEmail(domain.getEmail())
+                .withPhone(domain.getPhone())
                 .build();
     }
 }

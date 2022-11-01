@@ -13,7 +13,11 @@ import java.time.LocalDate;
 @Data
 @Builder
 public class BirthdayBoyRequestDto {
-
+    
     private String name;
     private LocalDate birthday;
+    private int interestType;
+    private String job;
+    private String email;
+    private String phone;
 }

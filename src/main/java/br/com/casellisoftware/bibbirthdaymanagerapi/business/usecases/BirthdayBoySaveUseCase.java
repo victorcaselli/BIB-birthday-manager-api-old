@@ -20,8 +20,17 @@ public class BirthdayBoySaveUseCase implements BirthdayBoySaveBoundary {
 
     @Override
     public BirthdayBoyBusiness execute(BirthdayBoyBusiness birthdayBoyBusiness) {
+        generateMonthAndDayOfMonth(birthdayBoyBusiness);
         BirthdayBoy domain = domainFactory.execute(birthdayBoyBusiness);
         domain = gateway.save(domain);
         return factory.execute(domain);
+    }
+
+
+    private void generateMonthAndDayOfMonth(BirthdayBoyBusiness entity){
+        int month = entity.getBirthday().getMonth().getValue();
+        int dayOfMonth = entity.getBirthday().getDayOfMonth();
+        entity.setMonthOfYear(month);
+        entity.setDayOfMonth(dayOfMonth);
     }
 }

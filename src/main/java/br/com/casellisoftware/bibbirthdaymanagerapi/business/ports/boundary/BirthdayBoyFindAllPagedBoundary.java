@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface BirthdayBoyFindAllPagedBoundary {
 
-    Page<BirthdayBoyBusiness> execute(PageRequest pageRequest);
+    Page<BirthdayBoyBusiness> execute(PageRequest pageRequest, int month);
 }

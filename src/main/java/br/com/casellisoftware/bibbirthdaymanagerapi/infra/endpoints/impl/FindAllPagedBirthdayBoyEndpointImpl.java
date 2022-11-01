@@ -13,6 +13,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -26,12 +27,16 @@ public class FindAllPagedBirthdayBoyEndpointImpl implements FindAllPagedBirthday
 
 
     @Override
-    public Page<BirthdayBoyResponseDto> execute(Integer page, Integer linesPerPage, String orderBy, String direction) {
+    public Page<BirthdayBoyResponseDto> execute(Integer page, Integer linesPerPage, String orderBy, String direction, Integer month) {
 
         if(checkLinePerPage(linesPerPage))
             throw new IllegalArgumentException("Invalid linesPerPage");
 
-        return useCase.execute(pageRequestFactory(page,linesPerPage,orderBy,direction))
+        if(month == null) {
+            month = LocalDate.now().getMonth().getValue();
+        }
+
+        return useCase.execute(pageRequestFactory(page,linesPerPage,orderBy,direction), month)
                 .map(businessMapper::map);
     }
 

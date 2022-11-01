@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface BirthdayBoyRepository extends JpaRepository<BirthdayBoyEntity, Long>  {
 
-    @Query("SELECT obj FROM BirthdayBoyEntity obj")
-    Page<BirthdayBoyEntity> findAllPaged(Pageable pageable);
+    @Query("SELECT obj FROM BirthdayBoyEntity obj where obj.monthOfYear = :month")
+    Page<BirthdayBoyEntity> findAllPaged(Pageable pageable, int month);
 }

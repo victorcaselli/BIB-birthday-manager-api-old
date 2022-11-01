@@ -17,8 +17,8 @@ public class BirthdayBoyFindAllPagedUseCase implements BirthdayBoyFindAllPagedBo
     }
 
     @Override
-    public Page<BirthdayBoyBusiness> execute(PageRequest pageRequest) {
-        return dataSourceGateway.findAllPaged(pageRequest)
+    public Page<BirthdayBoyBusiness> execute(PageRequest pageRequest, int month) {
+        return dataSourceGateway.findAllPaged(pageRequest, month)
                 .map(factory::execute);
     }
 }
